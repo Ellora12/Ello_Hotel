@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -28,25 +29,27 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: ELLO Hotel - v4.7.0
-  * Template URL: https://bootstrapmade.com/ELLO Hotel-free-restaurant-bootstrap-theme/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+ 
 </head>
+<script src="assets/js/main.js"></script>
+<script>
+  const firebaseConfig = {
+  apiKey: "AIzaSyAKwPmPAwvfPvJVAZ-RI-1n1L_Me6Am374",
+  authDomain: "ello-hotel.firebaseapp.com",
+  databaseURL: "https://ello-hotel-default-rtdb.firebaseio.com",
+  projectId: "ello-hotel",
+  storageBucket: "ello-hotel.appspot.com",
+  messagingSenderId: "883035822344",
+  appId: "1:883035822344:web:e45daddf0612fb8293f4bd",
+  measurementId: "G-8Z56M6V0HQ"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+</script>
 
 <body>
-
-  <!-- ======= Top Bar ======= -->
-  <!-- <section id="topbar" class="d-flex align-items-center fixed-top topbar-transparent">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-center justify-content-lg-start">
-      <i class="bi bi-geo-alt d-flex align-items-center"><span>Mirpur DOHS, Dhaka-1216, Banglagesh</span></i>
-      
-      <i class="bi bi-phone d-flex align-items-center"><span>+1 5589 55488 55</span></i>
-      <i class="bi bi-clock d-flex align-items-center"><span>Always open</span></i>
-    </div>
-  </section> -->
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center header-transparent">
@@ -60,9 +63,9 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
+          <li><a class="nav-link scrollto" href="index.html">Home</a></li>
           <li><a class="nav-link scrollto" href="index.html#about">About</a></li>
-          <li><a class="nav-link scrollto" href="room.html">Rooms and Suites</a></li>
+          <li><a class="nav-link scrollto active" href="room.html">Rooms and Suites</a></li>
           <li><a class="nav-link scrollto" href="events.html">Events</a></li>
 
           <li><a class="nav-link scrollto" href="gallery.html">Gallery</a></li>
@@ -84,7 +87,7 @@
     </div>
   </header><!-- End Header -->
 
-  <main id="main">
+  <main id="main" style="background-color: rgb(182, 210, 233)">
     
     <!-- ======= Breadcrumbs Section ======= -->
     <section class="breadcrumbs">
@@ -96,10 +99,6 @@
           <i class="bi bi-phone d-flex align-items-center"><span>+1 5589 55488 55 </span></i>
           <i class="bi bi-clock d-flex align-items-center"><span>Check-in: 2:00 pm </span></i>
           <i class="bi bi-clock d-flex align-items-center"><span>Check-out: 12:00 pm </span></i>
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li>information</li>
-          </ol>
         </div>
 
       </div>
@@ -109,15 +108,15 @@
     <div class="container">
 
       <div class="section-title">
-        <h2>Book a <span>Room</span></h2>
-        <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+        <h2 class="animate__animated animate__fadeInLeft">Book a <span>Room</span></h2>
+        <p class="animate__animated animate__fadeInRight">Our exceptional service is waiting for you· Welcome Hotel Ello.</p>
       </div>
 
-      <form action="forms/book-a-table.php" method="post" role="form" class="php-email-form">
+      <form method="post" role="form" class="php-email-form">
         <div class="row">
           <div class="col-lg-4 col-md-6 form-group">
             <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-            <div class="validate"></div>
+            
           </div>
           <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
             <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
@@ -141,17 +140,40 @@
           </div>
         </div>
         <div class="form-group mt-3">
-          <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
+          <textarea id="message" class="form-control" name="message" rows="5" placeholder="Message"></textarea>
           <div class="validate"></div>
         </div>
         <div class="mb-3">
           <div class="loading">Loading</div>
-          <div class="error-message"></div>
+          <div class="error-message d-none"></div>
           <div class="sent-message">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div>
         </div>
-        <div class="text-center"><button type="submit">Send Message</button></div>
+        <div class="text-center"><button onclick="show()" type="submit">Send Message</button></div>
       </form>
 
+      <br> <br>
+      <h3>For Search information</h3>
+      <form method="post" role="form" class="php-email-form">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+            <input type="text" id="id1" class="form-control" name="id" placeholder="Your Phone number" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+            <br>
+          </div>
+        </div>
+        <div class="text-center"><button onclick="search()" type="submit">Search</button></div>
+      </form>
+      <br> <br>
+      <h3>For canceling a room (Not within 48 hour)</h3>
+      <form method="post" role="form" class="php-email-form">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 form-group">
+            <input type="text" id="for_del" class="form-control" name="id" placeholder="Your Phone number" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+            <br>
+          </div>
+        </div>
+        <div class="text-center"><button onclick="delete_()" type="submit">Cancel Room</button></div>
+      </form>
+      
     </div>
   </section><!-- End Book a Room Section -->
 

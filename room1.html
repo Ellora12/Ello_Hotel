@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js";></script>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -26,26 +27,25 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: ELLO Hotel - v4.7.0
-  * Template URL: https://bootstrapmade.com/ELLO Hotel-free-restaurant-bootstrap-theme/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
+<script src="assets/js/main.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyAFws9ZepYhbyb6GThncaJbZGFFQ5C7aKk",
+    authDomain: "update-f9a50.firebaseapp.com",
+    projectId: "update-f9a50",
+    storageBucket: "update-f9a50.appspot.com",
+    messagingSenderId: "748483314322",
+    appId: "1:748483314322:web:e06e05f8b6d7e30bffdc4b",
+    measurementId: "G-V2RDBRF13S"
+  };
 
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
 <body>
 
-  <!-- ======= Top Bar ======= -->
-  <!-- <section id="topbar" class="d-flex align-items-center fixed-top topbar-transparent">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-center justify-content-lg-start">
-      <i class="bi bi-geo-alt d-flex align-items-center"><span>Mirpur DOHS, Dhaka-1216, Banglagesh</span></i>
-      
-      <i class="bi bi-phone d-flex align-items-center"><span>+1 5589 55488 55</span></i>
-      <i class="bi bi-clock d-flex align-items-center"><span>Always open</span></i>
-    </div>
-  </section> -->
-
+  
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center header-transparent">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
@@ -85,12 +85,9 @@
   <main id="main">
      
     <!-- ======= Breadcrumbs Section ======= -->
-\
-    <section class="breadcrumbs">
+    <section class="breadcrumbs" style="background-color: rgb(243, 209, 238)">
       <div class="container">
-
-        <div class="d-flex justify-content-between align-items-center">
-         
+        <div class="d-flex justify-content-between align-items-center">      
           <i class="bi bi-geo-alt d-flex align-items-center"><span>Mirpur DOHS, Dhaka-1216, Banglagesh </span></i>  
           <i class="bi bi-phone d-flex align-items-center"><span>+1 5589 55488 55 </span></i>
           <i class="bi bi-clock d-flex align-items-center"><span>Check-in: 2:00 pm </span></i>
@@ -788,7 +785,7 @@
                     </div>
                     <div class="bg-white rounded shadow-sm p-4 mb-4 restaurant-detailed-ratings-and-reviews">
                       
-                        <h5 class="mb-1">All Ratings and Reviews</h5>
+                        <h5 class="mb-1">Top Ratings and Reviews</h5>
                         <div class="reviews-members pt-4 pb-4">
                             <div class="media">
                                 <a href="#"><img alt="Generic placeholder image" src="http://bootdey.com/img/Content/avatar/avatar1.png" class="mr-3 rounded-pill"></a>
@@ -802,10 +799,10 @@
                                               <a href="#"><i class="icofont-ui-rating"></i></a>
                                               </span>
                                         <h6 class="mb-1"><a class="text-black" href="#">Singh Osahan</a></h6>
-                                        <p class="text-gray">Tue, 20 Mar 2020</p>
+                                        <p class="text-gray">Tue, 20 Dec 2021</p>
                                     </div>
                                     <div class="reviews-members-body">
-                                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections </p>
+                                        <p>This is the nicest place, I have ever been! I am so glad to visit this hotel. This is one of my best experiences.  The interior design is beautiful.I have ever had. Thank you. </p>
                                     </div>
                                     <div class="reviews-members-footer">
                                         <a class="total-like" href="#"><i class="icofont-thumbs-up"></i> 856M</a> <a class="total-like" href="#"><i class="icofont-thumbs-down"></i> 158K</a>
@@ -833,10 +830,11 @@
                                               <a href="#"><i class="icofont-ui-rating"></i></a>
                                               </span>
                                         <h6 class="mb-1"><a class="text-black" href="#">Gurdeep Singh</a></h6>
-                                        <p class="text-gray">Tue, 20 Mar 2020</p>
+                                        <p class="text-gray">Tue, 10 Nov 2021</p>
                                     </div>
                                     <div class="reviews-members-body">
-                                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                                        <p>Excellent decoration! This is one of my best experiences. I have ever had.I did not expect that much but this hotel service is very nice and everyone around here is so humble. Best wishes.
+                                            Regards.</p>
                                     </div>
                                     <div class="reviews-members-footer">
                                         <a class="total-like" href="#"><i class="icofont-thumbs-up"></i> 88K</a> <a class="total-like" href="#"><i class="icofont-thumbs-down"></i> 1K</a>
@@ -882,10 +880,11 @@
                           </div>
                           <div class="my-3">
                             <div class="loading">Loading</div>
-                            <div class="error-message"></div>
+                            <div class="error-message d-none"></div>
                             <div class="sent-message">Your message has been sent. Thank you!</div>
                           </div>
-                          <div class="text-center"><button type="submit">Send Message</button></div>
+                          <div class="text-center"><button onclick="show2()" type="submit">Send Message</button></div>
+                          
                         </form>
                     </div>
                 </div>

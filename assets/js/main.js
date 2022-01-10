@@ -4,9 +4,82 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+function search() 
+{
+    var id= document.getElementById("id1").value;
+
+firebase.database().ref('User/'+ id).once('value').then(function(snapshot) {
+                if (snapshot.exists()) {
+                     var name_ =  snapshot.val("name").value;
+                     var email_=  snapshot.val("email").value;
+                     var phone_=  snapshot.val("phone").value;
+                     var date_ =  snapshot.val("date").value;
+                     var time_=  snapshot.val("time").value;
+                     var people_=  snapshot.val("people").value;
+                     var message_=  snapshot.val("message").value;
+                      document.getElementById("name").value = name_;
+                      document.getElementById("email").value = email_;
+                      document.getElementById("phone").value = phone_;
+                      document.getElementById("date").value = date_;
+                      document.getElementById("time").value =time_;
+                      document.getElementById("phone").value = people_;
+                      document.getElementById("email").value =message_;
+                   
+                }
+                else
+                {
+
+                }
+        }, function(error) {
+            if (error) {
+
+            } else {
+              alert("EDIT");
+
+            }
+          });
+}
+function delete_()
+{
+    var del_user = document.getElementById("for_del").value;
+    let userRef = firebase.database().ref('User/' + del_user);
+    userRef.remove();
+    alert("Successfully Removed");
+}
+function show() {
+
+  var name = document.getElementById("name").value;
+  var email= document.getElementById("email").value;
+  var phone= document.getElementById("phone").value;
+  var date = document.getElementById("date").value;
+  var time= document.getElementById("time").value;
+  var people= document.getElementById("people").value;
+  var message= document.getElementById("message").value;
+
+   firebase.database().ref('User/' + phone).set({
+          name : name,
+          email : email,
+          phone : phone,
+          date : date,
+          time : time,
+          people : people,
+          message : message
+        }, function(error) {
+          if (error) {
+            alert("The write failed");
+            // The write failed...
+          } else {
+              alert("DONE");
+            
+         
+          }
+        });
+} 
+
 (function() {
   "use strict";
 
+  
   /**
    * Easy selector helper function
    */

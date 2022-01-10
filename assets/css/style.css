@@ -556,7 +556,7 @@ section {
 # About
 --------------------------------------------------------------*/
 .about {
-  background: #fffaf3;
+  background: #f7efe4;
 }
 .about .content {
   padding: 0 80px;
@@ -564,7 +564,7 @@ section {
 .about .content h3 {
   font-weight: 400;
   font-size: 34px;
-  color: #5f5950;
+  color: #181410;
 }
 .about .content h4 {
   font-size: 20px;
@@ -573,7 +573,7 @@ section {
 }
 .about .content p {
   font-size: 15px;
-  color: #848484;
+  color: #161212;
 }
 .about .content ul {
   list-style: none;
@@ -710,6 +710,9 @@ section {
 /*--------------------------------------------------------------
 # Whu Us
 --------------------------------------------------------------*/
+.why-us{
+  background-color: rgb(167, 179, 212);
+}
 .why-us .box {
   padding: 50px 30px;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
@@ -727,10 +730,10 @@ section {
   font-weight: 600;
   padding: 0;
   margin: 20px 0;
-  color: #6c665c;
+  color: #b92bb0;
 }
 .why-us .box p {
-  color: #aaaaaa;
+  color: #1a1313;
   font-size: 15px;
   margin: 0;
   padding: 0;
@@ -1028,7 +1031,8 @@ section {
 # Gallery
 --------------------------------------------------------------*/
 .gallery {
-  padding-bottom: 1px;
+  background-color: #e4bff0;
+  
 }
 .gallery .gallery-item {
   overflow: hidden;
