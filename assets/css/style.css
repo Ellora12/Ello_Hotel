@@ -8,6 +8,10 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+form
+{
+  border-radius: 15px;
+}
 body {
   font-family: "Poppins", sans-serif;
   color: #444444;
@@ -91,7 +95,7 @@ h1, h2, h3, h4, h5, h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  top: 20px;
+  top: 0px;
   height: 70px;
   z-index: 997;
   transition: all 0.5s;
@@ -506,7 +510,7 @@ section {
   padding: 20px 0;
   background-color: #f2f1ef;
   min-height: 40px;
-  margin-top: 120px;
+  margin-top: 70px;
 }
 @media (max-width: 992px) {
   .breadcrumbs {

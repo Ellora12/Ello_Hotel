@@ -7,16 +7,19 @@
 function search() 
 {
     var id= document.getElementById("id1").value;
+    
 
 firebase.database().ref('User/'+ id).once('value').then(function(snapshot) {
                 if (snapshot.exists()) {
-                     var name_ =  snapshot.val("name").value;
-                     var email_=  snapshot.val("email").value;
-                     var phone_=  snapshot.val("phone").value;
-                     var date_ =  snapshot.val("date").value;
-                     var time_=  snapshot.val("time").value;
-                     var people_=  snapshot.val("people").value;
-                     var message_=  snapshot.val("message").value;
+                  alert(id);
+                     var name_ =  snapshot.val().name;
+                     var email_=  snapshot.val().email;
+                     var phone_=  snapshot.val().phone;
+                     var date_ =  snapshot.val().date;
+                     var time_=  snapshot.val().time;
+                     var people_=  snapshot.val().people;
+                     var message_=  snapshot.val().message;
+                     console.log(name_ ,email_,phone_,date_,time_,people_,message_)
                       document.getElementById("name").value = name_;
                       document.getElementById("email").value = email_;
                       document.getElementById("phone").value = phone_;

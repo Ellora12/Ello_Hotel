@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js";></script>
+  <!-- <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js";></script> -->
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -29,20 +29,7 @@
 
 </head>
 <script src="assets/js/main.js"></script>
-<script>
-  const firebaseConfig = {
-    apiKey: "AIzaSyAFws9ZepYhbyb6GThncaJbZGFFQ5C7aKk",
-    authDomain: "update-f9a50.firebaseapp.com",
-    projectId: "update-f9a50",
-    storageBucket: "update-f9a50.appspot.com",
-    messagingSenderId: "748483314322",
-    appId: "1:748483314322:web:e06e05f8b6d7e30bffdc4b",
-    measurementId: "G-V2RDBRF13S"
-  };
 
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-</script>
 <body>
 
   
@@ -62,16 +49,7 @@
           <li><a class="nav-link scrollto" href="index.html#about">About</a></li>
           <li><a class="nav-link scrollto active" href="room.html">Rooms and Suites</a></li>
           <li><a class="nav-link scrollto" href="events.html">Events</a></li>
-
           <li><a class="nav-link scrollto" href="gallery.html">Gallery</a></li>
-          <li class="dropdown"><a href="#"><span>Deals</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">First time's a charm</a></li>
-              <li><a href="#">Members Only Rate</a></li>
-              <li><a href="#">Plan & Save</a></li>
-              <li><a href="#">Book more, get more</a></li>
-            </ul>
-          </li>
           <li><a class="nav-link scrollto" href="contact.html">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -863,29 +841,51 @@
                                      <a href="#"><i class="icofont-ui-rating icofont-2x"></i></a>
                                      </span>
                         </div>
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                          <div class="row">
-                            <div class="col-md-6 form-group">
-                              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                            </div>
-                            <div class="col-md-6 form-group mt-3 mt-md-0">
-                              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                            </div>
+                        <div class="container">
+                            <h3 class="mt-3 text-center border-bottom pb-2">Share your Comment</h3>
+                            <form id="comments">
+                              <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input
+                                  id="name"
+                                  name="name"
+                                  type="text"
+                                  class="form-control"
+                                  autocomplete="off"
+                                />
+                              </div>
+                              <div class="mb-3">
+                                <label for="comment" class="form-label">Write a Comment</label>
+                                <textarea id="comment" name="comment" class="form-control"></textarea>
+                              </div>
+                              
+                              <div class="text-center"><button class="btn btn-outline-primary" style= "color: #fff ;background: #bc12ff">Post Comment</button></div>
+                            </form>
                           </div>
-                          <div class="form-group mt-3">
-                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-                          </div>
-                          <div class="form-group mt-3">
-                            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-                          </div>
-                          <div class="my-3">
-                            <div class="loading">Loading</div>
-                            <div class="error-message d-none"></div>
-                            <div class="sent-message">Your message has been sent. Thank you!</div>
-                          </div>
-                          <div class="text-center"><button onclick="show2()" type="submit">Send Message</button></div>
-                          
-                        </form>
+                          <div class="container cont"></div>
+                          <script
+                            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+                            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+                            crossorigin="anonymous"
+                          ></script>
+                          <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+                          <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>
+                          <script>
+                            const firebaseConfig = {
+                            apiKey: "AIzaSyAKwPmPAwvfPvJVAZ-RI-1n1L_Me6Am374",
+                            authDomain: "ello-hotel.firebaseapp.com",
+                            databaseURL: "https://ello-hotel-default-rtdb.firebaseio.com",
+                            projectId: "ello-hotel",
+                            storageBucket: "ello-hotel.appspot.com",
+                            messagingSenderId: "883035822344",
+                            appId: "1:883035822344:web:e45daddf0612fb8293f4bd",
+                            measurementId: "G-8Z56M6V0HQ"
+                          };
+                            // Initialize Firebase
+                            firebase.initializeApp(firebaseConfig);
+                            const db = firebase.firestore();
+                          </script>
+                          <script src="./app.js"></script>
                     </div>
                 </div>
             </div>
